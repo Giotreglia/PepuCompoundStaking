@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div style="height: 100vh; background-image: url('https://s3.us-east-2.amazonaws.com/assets.rollbridge.app/e4d93b331cd5398621db7.png'); mix-blend-mode: normal; background-size: cover; background-repeat: no-repeat; background-position: center;">
+        <div class="d-flex justify-content-around">
+            <img class="mt-3" src="https://s3.us-east-2.amazonaws.com/assets.rollbridge.app/900b1b99c7b3bb41a0aff.svg" alt="">
+            <h1 class="text-dark text-center my-5 fw-bolder">PEPU compound reward calculator</h1>
+        </div>
+    
+        <div class="container">
+            <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input type="number" class="form-control" id="reward" placeholder="Reward %">
+                    <label for="reward">Percentuale reward</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input type="number" class="form-control" id="amount" placeholder="Amount">
+                      <label for="reward">Imponibile</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input type="number" class="form-control" id="days" placeholder="Giorni durata">
+                      <label for="days">Durata periodo operazione (giorni)</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                      <input type="number" class="form-control" id="hours" placeholder="Intervallo ore">
+                      <label for="hours">Intervallo ore prelievo (ore)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex w-100 justify-content-center my-5">
+                <div class="col-auto">
+                    <button id="calcBtn" class="btn btn-lg btn-success">Calcola</button>
+                    <button id="reset" class="btn btn-lg btn-light">Reset</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Totale rewards annue</div>
+                        <div class="card-body">
+                          <h2 id="result" class="card-title"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Rewards giornaliere</div>
+                        <div class="card-body">
+                          <h2 id="dailyResult" class="card-title"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Rewards mensili (30 gg)</div>
+                        <div class="card-body">
+                          <h2 id="monthlyResult" class="card-title"></h2>
+                        </div>
+                    </div>   
+                </div>
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Totale per <span id="daysResult"></span> giorni senza reinvestire le rewards</div>
+                        <div class="card-body">
+                          <h2 id="monthlyWithoutCompound" class="card-title"></h2>
+                        </div>
+                    </div>    
+                </div>        
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Totale per <span id="daysResult2"></span> giorni reinvestendo ogni 24h le rewards</div>
+                        <div class="card-body">
+                          <h2 id="monthlyCompound" class="card-title"></h2>
+                        </div>
+                    </div> 
+                </div>        
+                <div class="col-3">
+                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Totale per <span id="daysResult3"></span> giorni reinvestendo ogni <span id="hoursResult"></span>h le rewards</div>
+                        <div class="card-body">
+                          <h2 id="hourCompound" class="card-title"></h2>
+                        </div>
+                    </div>  
+                </div>           
+                <div class="col-3">
+                    <div class="card text-bg-success mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Guadagno complessivo reinvestendo ogni 24h le rewards</div>
+                        <div class="card-body">
+                          <h2 id="gain" class="card-title"></h2>
+                          <span>(+<span id="percDay"></span>)</span>
+                        </div>
+                    </div>  
+                </div>          
+                <div class="col-3">
+                    <div class="card text-bg-success mb-3" style="max-width: 18rem; min-height: 200px">
+                        <div class="card-header">Guadagno complessivo reinvestendo ogni <span id="hoursResult2"></span>h le rewards</div>
+                        <div class="card-body">
+                          <h2 id="gainHour" class="card-title"></h2>
+                          <span>(+<span id="percHour"></span>)</span>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
