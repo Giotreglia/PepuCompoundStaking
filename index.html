@@ -51,69 +51,69 @@
     
         <div class="container mt-5">
             <div class="row">
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Totale rewards annue</div>
-                        <div class="card-body">
-                          <h2 id="result" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="result" class="card-title"></h1>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Rewards giornaliere</div>
-                        <div class="card-body">
-                          <h2 id="dailyResult" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="dailyResult" class="card-title"></h1>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Rewards mensili (30 gg)</div>
-                        <div class="card-body">
-                          <h2 id="monthlyResult" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="monthlyResult" class="card-title"></h1>
                         </div>
                     </div>   
                 </div>
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Totale per <span id="daysResult"></span> giorni senza reinvestire le rewards</div>
-                        <div class="card-body">
-                          <h2 id="monthlyWithoutCompound" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="monthlyWithoutCompound" class="card-title"></h1>
                         </div>
                     </div>    
                 </div>        
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+<!--                 <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Totale per <span id="daysResult2"></span> giorni reinvestendo ogni 24h le rewards</div>
-                        <div class="card-body">
-                          <h2 id="monthlyCompound" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="monthlyCompound" class="card-title"></h1>
                         </div>
                     </div> 
-                </div>        
-                <div class="col-3">
-                    <div class="card text-bg-light mb-3" style="max-width: 18rem; min-height: 200px">
+                </div>     -->    
+                <div class="col-4">
+                    <div class="card text-bg-light mb-3" style=" min-height: 200px">
                         <div class="card-header">Totale per <span id="daysResult3"></span> giorni reinvestendo ogni <span id="hoursResult"></span>h le rewards</div>
-                        <div class="card-body">
-                          <h2 id="hourCompound" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="hourCompound" class="card-title"></h1>
                         </div>
                     </div>  
                 </div>           
-                <div class="col-3">
-                    <div class="card text-bg-success mb-3" style="max-width: 18rem; min-height: 200px">
+<!--                 <div class="col-4">
+                    <div class="card text-bg-success mb-3" style=" min-height: 200px">
                         <div class="card-header">Guadagno complessivo reinvestendo ogni 24h le rewards</div>
-                        <div class="card-body">
-                          <h2 id="gain" class="card-title"></h2>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                          <h1 id="gain" class="card-title"></h1>
                           <span>(+<span id="percDay"></span>)</span>
                         </div>
                     </div>  
-                </div>          
-                <div class="col-3">
-                    <div class="card text-bg-success mb-3" style="max-width: 18rem; min-height: 200px">
+                </div>     -->      
+                <div class="col-4">
+                    <div class="card text-bg-success mb-3" style=" min-height: 200px">
                         <div class="card-header">Guadagno complessivo reinvestendo ogni <span id="hoursResult2"></span>h le rewards</div>
-                        <div class="card-body">
-                          <h2 id="gainHour" class="card-title"></h2>
-                          <span>(+<span id="percHour"></span>)</span>
+                        <div class="card-body d-flex flex-column justify-content-end align-items-end">
+                            <span class="f-4 fw-bold">(+<span id="percHour"></span>)</span>
+                            <h1 id="gainHour" class="card-title"></h1>
                         </div>
                     </div>
                 </div>          
