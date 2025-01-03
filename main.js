@@ -56,7 +56,7 @@ calcBtn.addEventListener('click', function () {
 
     // Funzione helper per aggiungere il suffisso $pepu
     function formatResult(value) {
-        return `${value.toFixed(2)} <span style="font-size: 0.5em;">$pepu</span>`;
+        return `${value.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <span style="font-size: 0.8em;">$pepu</span>`;
     }
 
     // Aggiornamento risultati
@@ -70,6 +70,11 @@ calcBtn.addEventListener('click', function () {
     gainHour.innerHTML = formatResult(montanteCompoundHours - montanteMensileNoCompound);
     percDay.innerHTML = `${(((montanteCompound - montanteMensileNoCompound) / montanteMensileNoCompound) * 100).toFixed(2)}%`;
     percHour.innerHTML = `${(((montanteCompoundHours - montanteMensileNoCompound) / montanteMensileNoCompound) * 100).toFixed(2)}%`;
+    daysResult.innerHTML = daysValue;
+    daysResult2.innerHTML = daysValue;
+    daysResult3.innerHTML = daysValue;
+    hoursResult.innerHTML = hoursValue;
+    hoursResult2.innerHTML = hoursValue;
 });
 
 // Reset
